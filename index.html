@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene background = "color:green">
+        <a-assets timeout = "5000">
+            <a-asset-item src = "./tiger/tiger.gltf" id = "tiger"></a-asset-item>
+            <a-asset-item src = "./photographer/scene.gltf" id = "p_grapher"></a-asset-item>
+            <a-asset-item src = "./street_lamp/scene1.gltf" id = "s_lamp"></a-asset-item>
+        </a-assets>
+        <a-entity light = "type: ambient; intensity: 1"></a-entity>
+        <a-entity animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 10000">
+        <a-entity light = "type: point; intensity: 100; color:red; distance: 50; decay: 5; castShadow: true" position = "-100 20 20"></a-entity>
+    </a-entity>
+    <a-circle position = "-0.4 -0.7 -25" rotation = "-90 0 0" radius = "100" shadow = "receive:true" visible = "true" color = "blue"></a-circle>
+        <a-entity>
+           <a-entity gltf-model = "#tiger" position = "-9 4 8.2" rotation = "0 -10 0" scale = "0.05 0.05 0.05" shadow  = "cast:true; receive: false" ></a-entity>
+           <a-entity gltf-model = "#p_grapher" position = "5 0 8.2" rotation = "0 -10 0" scale = "1 1 1" shadow  = "cast:true; receive: false" ></a-entity>
+           <a-entity gltf-model = "#s_lamp" position = "-25 0 8.2" rotation = "0 -10 0" scale = "1.5 1.5 1.5" shadow  = "cast:true; receive: false" ></a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+</html>
